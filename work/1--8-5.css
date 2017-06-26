@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.car{
+  width: 300px;
+  border: 1px  solid  grey;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px 0  grey;
+}
+.car img{
+  width: 100%;
+  opacity: 0.8;
+}
+
+.car h3{
+  margin: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.car p{
+  margin: 10px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+.box{
+  width: 300px;
+  border: 1px  solid  grey;
+  margin: 30px auto;
+  box-shadow: 0 8px 16px 0  grey;
+}
+
+.box img{
+  width: 100%;
+  opacity: 0.8;
+}
+
+.box p{
+  margin: 10px;
+  text-align: center;
+}
