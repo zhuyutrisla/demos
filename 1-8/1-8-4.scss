@@ -1,0 +1,39 @@
+*{
+  magin: 0;
+  padding: 0;
+}
+@mixin colors($color1, $color2, $color3, $color4, $size: 20px){
+  width: 0;
+  height: 0;
+  border-top: $size solid  $color1;
+  border-right: $size solid $color2; 
+  border-bottom: $size solid $color3;
+  border-left: $size solid $color4;  
+}
+.square{
+  @include colors(blue,yellow,green,red)
+}
+
+.tr1{
+  @include colors(blue,transparent,transparent,transparent)
+}
+
+.tr2{
+  @include colors(transparent,transparent,transparent,red)  
+}
+
+.tr3{
+  @include colors(transparent,yellow,transparent,transparent)    
+}
+
+.tr4{
+  @include colors(transparent,transparent,green,transparent)    
+}
+
+.tr5{
+  @include colors(transparent,transparent,red,red,15px)   
+}
+
+.tr6{
+  @include colors(transparent,green,green,transparent,15px)   
+}

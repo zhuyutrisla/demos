@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@mixin types1($num: 0px){
+  width: 300px;
+  border: 1px  solid  grey;
+  margin: $num auto;
+  box-shadow: 0 8px 16px 0  grey;
+}
+@mixin types2{
+  width: 100%;
+  opacity: 0.8;  
+}
+.car{
+  @include types1
+}
+.car {
+  img{
+  @include types2
+}
+}
+.car {
+  h3{
+  margin: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+  }
+}
+.car{ 
+  p{
+  margin: 10px;
+  padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+  }
+}
+
+.box{
+  @include types1(30px)
+}
+
+.box img{
+  @include types2
+}
+
+.box p{
+  margin: 10px;
+  text-align: center;
+}
