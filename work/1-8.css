@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.all p{  
+  margin: 30px auto;
+}
+.pattem1{
+  margin: 20px;
+  padding: 20px;
+  width: 550px;
+  border: 1px solid #ccc;
+}
+
+.pattem2{
+  margin: 20px;
+  padding: 20px;
+  width: 550px;
+  background: #FFCCCC;
+  border-left: solid 5px red;
+  border-right: solid 5px red;
+}
+
+.pattem3{
+  margin: 20px;
+  padding: 20px;
+  width: 550px;
+  background: #FFFFCC;
+  border-top: solid 5px yellow;
+  border-bottom: solid 5px yellow;
+}
+
+.pattem4{
+  margin: 20px;
+  padding: 20px;
+  width: 550px;
+  background: #CCFFCC;
+  border-top: solid 1px green;
+  border-bottom: solid 5px green;
+  border-left: solid 1px green;
+  border-right: solid 1px green;
+}

@@ -1,0 +1,36 @@
+*{
+  magin: 0;
+  padding: 0;
+}
+.all{
+  p {
+    margin: 30px auto
+  }
+}
+
+@mixin type{
+  margin: 20px;
+  padding: 20px;
+  width: 550px;
+}
+@for $i from 1 through 4{
+  .pattem#{$i} { @include type; 
+      @if $i == 1 {
+    border: 1px solid #ccc;
+    }@else if $i == 2{
+      background: #FFCCCC;
+      border-left: solid 5px red;
+      border-right: solid 5px red;
+    }@else if $i == 3{
+      background: #FFFFCC;
+      border-top: solid 5px yellow;
+      border-bottom: solid 5px yellow;
+    }@else if $i == 4 {
+      background: #CCFFCC;
+      border-top: solid 1px green;
+      border-bottom: solid 5px green;
+      border-left: solid 1px green;
+      border-right: solid 1px green;
+    }
+  }
+}
