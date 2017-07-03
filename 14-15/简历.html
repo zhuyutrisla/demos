@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style type="text/css">
+    * {
+  margin: 0;
+  padding: 0;
+
+
+}
+
+.wrapper { 
+  width: 1000px;
+  margin: 30px auto;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;  
+}
+
+
+header>span {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+span>img {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header>article {
+  padding: 50px; 
+  flex-grow: 1;
+}
+
+header>article>h1 {
+  font-size: 42px;
+  padding: 20px 0;
+
+}
+
+.cantact{
+  width: 300px;
+}
+
+.cantact>h3 {
+  margin-top: 50px;
+  border-bottom: 5px solid grey;
+}
+
+main>h3 {
+  margin: 30px 30px;
+  font-size: 26px;
+  width: 400px;
+  padding:  20px;
+  border-bottom: 1px solid;
+}
+
+ul>li {
+  list-style: none;
+  padding: 7px 0;
+}
+
+main>ul {
+  margin-left: 20px; 
+
+}
+
+main>ul>li {
+  border-left: 1px solid;
+  padding: 40px  40px;
+  position: relative; 
+  line-height: 2;
+}
+
+main>ul>li :nth-child(3){
+  opacity: 0.5;
+}
+
+.leftdot{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: black;
+  position: absolute;
+  top:  45px;
+  left: -7.5px;
+  
+}
+
+.education>ul>li>p:first-of-type{
+  opacity: 0.5;
+}
+
+footer{
+  display: flex;
+
+}
+
+
+footer h3 {
+  padding: 10px  60px;
+  line-height: 2; 
+  font-size: 20px;
+  width: 350px;
+  border-bottom: 1px solid;
+}
+
+footer .acti{
+  position: relative;
+  line-height: 2;
+  padding: 10px  60px;
+  
+}
+
+footer .acti p{
+  width: 400px;
+  margin-left: 10px;
+}
+
+
+.acti .circle{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid;
+  text-align: center;
+  position: absolute;
+  left: 0;
+
+}
+
+footer .skill>ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;  
+
+}
+
+footer .skill>ul>li{
+  position: relative;
+
+}
+
+footer .skill>h3 {
+  padding: 16px;
+}
+
+footer .skill>ul>li>p{
+
+  width: 100px;
+  height: 20px;
+  padding: 30px;
+
+}
+
+
+.skill .circle {
+
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  border: 1px solid;
+  text-align: center;
+  position: absolute;
+  left: -20px;
+  top: 30px;
+} 
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <span><img src="http://img.sc115.com/uploads2/sc/png/2565/%E4%B8%AA%E6%80%A7%E7%94%B5%E8%84%91%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E4%B8%8B%E8%BD%BD2.png"></span>
+      <article>
+        <h1>祝余</h1>
+        <h3>前端工程师</h3>
+      </article>
+      <div class="cantact">
+        <h3>联系方式</h3>
+        <ul>
+          <li>地址：广东省深圳市XX区</li>
+          <li>联系电话： 18XXXXXXXXX</li>
+          <li>email： 123456@123.com</li>
+          <li>网址： www.123.com</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h3>WORK EXPERIENCE</h3>
+      <ul>
+        <li>
+          <span class="leftdot"></span>
+          <span>Star Ltd., corporation</span>
+          <span>/2014-2015</span>
+
+          <p>Demonstrated development and audit programming role using ClearCase, ClearQuest, FTR, MetroWerks, Lint, ATT, and Code Warrior</p>
+        </li>
+             
+        <li>
+          <span class="leftdot"></span>
+          <span>Building Unlimited</span>
+          <span>/2015-2016</span>             
+
+          <p>Delivered three large web projects based on Microsoft Solutions Framework and the Rational Unified Process </p>          
+        </li>  
+        
+        <li>
+            <span class="leftdot"></span>
+            <span>CRM management system</span>
+            <span>/2016-Now</span> 
+
+          <p>Demonstrated development and audit programming role using ClearCase, ClearQuest, FTR, MetroWerks, Lint, ATT, and Code Warrior</p>               
+        </li>
+      </ul>
+    </main>
+    
+    
+    <main  class="education">
+      <h3>EDUCATION</h3>
+      <ul>
+        <li>
+          <span class="leftdot"></span>
+          <span>College</span>
+          <span>/2009-2012</span>
+          <p>Industrial Engineering</p>
+          <p>Demonstrated development and audit programming role using ClearCase, ClearQuest, FTR, MetroWerks, Lint, ATT, and Code Warrior</p>
+        </li>
+             
+        <li>
+          <span class="leftdot"></span>
+          <span>University</span>
+          <span>/2012-2016</span>             
+          <p>Industrial Engineering</p>              
+          <p>Demonstrated development and audit programming role using ClearCase, ClearQuest, FTR, MetroWerks, Lint, ATT, and Code Warrior</p>        
+        </li>  
+        
+
+      </ul>      
+    </main>
+    <footer>
+      <div class="acti">
+        <h3>EXTRA CURRICULAR ACITVITIES</h3>
+        <span class="circle">+</span>
+        <p>Volunteer</p>
+        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+        <span class="circle">+</span>
+        <p>Volunteer</p>
+        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>        
+      </div>
+      
+      <div class="skill">
+        <h3>PROFESIONAL SKILLS</h3>
+          <ul>
+            <li>
+              <span class="circle">+</span>
+              <p>HTML & CSS</p>
+            </li>
+            <li>
+              <span class="circle">+</span>               
+              <p>JQUERY</p>
+            </li>
+            <li>
+              <span class="circle">+</span>
+              <p>JAVASCRIPT</p>
+            </li>
+            <li>
+              <span class="circle">+</span>
+              <p>PHOTOSHOP</p>
+            </li>
+            <li>
+              <span class="circle">+</span>
+              <p>SLIM</p>
+            </li>
+            <li>
+              <span class="circle">+</span>
+              <p>ILLUSTRATOP</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

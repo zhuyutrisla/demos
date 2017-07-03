@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style type="text/css">
+    *{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 600px;
+  margin: 0 auto;
+}
+.card{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);  
+}
+
+
+.layout{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border: 1px grey solid;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+  border-radius: 5px;
+}
+
+
+.header,.footer{
+  background: #009688;
+  color: white;
+  padding: 1px 16px;
+     
+}
+.footer>p,h3,h1{
+ padding: 10px;
+}
+.button{
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  color: white;
+  background: transparent;
+  text-decoration: none
+}
+.main>p{
+  padding: 16px;
+}
+
+
+  </style>
+</head>
+<body>
+    <h1>这是页面内容</h1>
+    <h1>这是页面内容</h1>
+    <h1>这是页面内容</h1>
+    <h1>这是页面内容</h1>  
+  <div class="card">
+    <div class="layout">
+      <div class="header">
+        <h3>头部</h3>
+        <a href="#" class="button"><span>X</span></a>
+      </div>
+      <div class="main">
+        <p>这是内容</p>
+        <p>这是内容</p>
+      </div>
+      <div class="footer">
+        <p>尾部</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
