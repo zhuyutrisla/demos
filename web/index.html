@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>加载更多</title>
+  <style>	
+		.wrapper{
+		 width: 1000px;
+		 margin: 0 auto;
+		 text-align: center;
+		}
+
+		#contain>li{
+		  padding: 10px;
+		  list-style: none;
+		  border: 1px solid;
+		  margin-bottom: 10px;
+		  text-align: left;  
+		  border-radius: 10px;
+		}
+		#contain>li:hover{
+			background: green;
+		}
+
+
+		a {
+		  color: black;
+		  padding: 10px;
+		  text-decoration: none;
+		  width: 100px;
+		  height: 50px;
+		  border: 1px solid #aaa;
+		  border-radius: 10px;
+		}
+
+		a:hover{
+		  color: red;
+		  background: yellow;
+		}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul id="contain">
+    </ul>
+     <a class = 'btn' href="#">加载更多</a>
+  </div>
+  <script>
+		var btn = document.querySelector('.btn')
+		var contain = document.querySelector('#contain')  
+		var curIndex = 0 
+		var curLength = 6
+		var isLoad = true
+
+
+		btn.addEventListener('click',function(e){
+		  e.preventDefault()
+		  if (!isLoad){
+		  	return
+		  }
+		  var xhr = new XMLHttpRequest()
+		  xhr.onreadystatechange = function(){
+		    if (xhr.readyState === 4 ) {
+		    	if (xhr.status === 200 || xhr.status === 304) {
+			      var result = JSON.parse(xhr.responseText)
+			      var docFragment = document.createDocumentFragment()
+			      for (var i = 0; i<result.length;i++){
+			      	var newLi = document.createElement('li')
+			      	newLi.innerText = result[i]
+			      	docFragment.appendChild(newLi)
+			      }
+			      contain.appendChild(docFragment)
+			      curIndex += 6
+		    	}else{
+		    		alert('页面出错了！！！')
+		    	}
+		    }
+		    isLoad = true	
+		   }
+		  
+		  xhr.open('get','/loadMore?index='+curIndex+'&length='+curLength,true)
+		  xhr.send()
+		  isLoad = false
+
+		})
+  </script>
+</body>
+</html>
