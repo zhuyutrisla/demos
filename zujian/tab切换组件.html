@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>tab切换</title>
+  <style>
+    *{
+      margin： 0;
+      padding: 0;
+    }
+
+    li{
+      list-style: none;
+    }
+
+    .wrapper{
+      margin: 30px;
+      font-size: 0;
+    }
+
+
+    .header{
+      width: 180px;
+      border: 1px solid;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .header>li{
+      font-size: 16px;
+      text-align: center;
+      width: 50px;
+      border-left: 1px solid;
+      padding: 5px;
+    }
+
+    .header>li:first-child{
+      flex-grow: 1;
+      border: none;
+    }
+
+    .panel{
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .panel>ul{
+      width: 900px;
+      display: flex;
+      position: absolute;
+    }
+
+
+    .panel>ul>li{
+      font-size: 16px;
+      width: 300px;
+      height: 300px;
+      
+    }
+
+    .panel>ul>li:nth-child(1){
+      background: red;
+     
+    }
+
+    .panel>ul>li:nth-child(2){
+      background: blue;
+
+    }
+
+
+    .panel>ul>li:nth-child(3){
+      background: yellow;
+    }
+
+
+
+    .active{
+      background : #ccc;
+    }    
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="header">
+      <li class='active'>项目1</li>
+      <li>项目2</li>
+      <li>项目3</li>
+    </ul>
+    <div class='panel'>
+      <ul>
+        <li>内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+      </ul>   
+    </div>
+  </div>
+  <div class="wrapper">
+    <ul class="header">
+      <li class='active'>项目1</li>
+      <li>项目2</li>
+      <li>项目3</li>
+    </ul>
+    <div class='panel'>
+      <ul>
+        <li>内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+      </ul>   
+    </div>
+  </div>  
+  <script>
+    var contentSwitch = (function(){
+      function Switch($target){
+        this.$target = $target
+        this.bind()
+      }
+
+      Switch.prototype.bind = function(){
+        var _this = this
+        this.$target.find('.header>li').on('click',function(){
+          $(this).addClass('active').siblings().removeClass('active')
+          this.index = $(this).index()
+          _this.$target.find('.panel>ul').animate({left: -300*this.index},'slow')
+        })
+      }
+
+      return {
+        init: function($ct){
+          $ct.each(function(idx,value){
+            new Switch($(value))
+          })
+        }
+      }
+    })()
+
+    contentSwitch.init($('.wrapper'))
+
+  </script>
+</body>
+</html>
