@@ -4,11 +4,11 @@
 }
 @font-face {
   font-family: 'iconfont';  
-  src: url('http://at.alicdn.com/t/font_7h3irlljkk2o6r.eot');
-  src: url('http://at.alicdn.com/t/font_7h3irlljkk2o6r.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_7h3irlljkk2o6r.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_7h3irlljkk2o6r.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_7h3irlljkk2o6r.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_7h3irlljkk2o6r.eot');
+  src: url('//at.alicdn.com/t/font_7h3irlljkk2o6r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_7h3irlljkk2o6r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_7h3irlljkk2o6r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_7h3irlljkk2o6r.svg#iconfont') format('svg');
 }
 
 header{
@@ -319,11 +319,11 @@ ol>li{
 
 @font-face {
   font-family: 'social';  /* project id 342145 */
-  src: url('http://at.alicdn.com/t/font_r5q6zeo0im37hkt9.eot');
-  src: url('http://at.alicdn.com/t/font_r5q6zeo0im37hkt9.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_r5q6zeo0im37hkt9.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_r5q6zeo0im37hkt9.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_r5q6zeo0im37hkt9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_r5q6zeo0im37hkt9.eot');
+  src: url('//at.alicdn.com/t/font_r5q6zeo0im37hkt9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_r5q6zeo0im37hkt9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_r5q6zeo0im37hkt9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_r5q6zeo0im37hkt9.svg#iconfont') format('svg');
 }
 
 .social {
