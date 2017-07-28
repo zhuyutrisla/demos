@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Gotop组件</title>
+  <style type="text/css">
+    #click{
+      width: 100px;
+      height: 40px;
+      background: #333;
+      border-radius: 5px;
+      position: fixed;
+      bottom: 10px;;
+      right: 10px;
+      z-index: 10;
+      text-align: center;
+      line-height: 40px;
+      color: white;
+    }
+
+
+
+
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    li{
+      list-style: none;
+      display: inline-block;
+      width: 200px;
+      position: absolute;
+      margin: 10px;
+      transition: all 1s;
+    }
+
+    .contain{
+      position: relative;
+
+    }
+
+    #h1{
+      height: 150px;
+      background: red;
+    }
+
+    #h2{
+      height: 200px;
+      background: blue;
+    }
+
+    #h3{
+      height: 300px;
+      background: yellow;
+    }
+
+    #h4{
+      height: 250px;
+      background: green;
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+    }    
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="contain">
+      <li id='h1'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h1'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h1'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h1'><img src="" alt=""></li>      
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>      
+      <li id='h1'><img src="" alt=""></li>
+      <li id='h3'><img src="" alt=""></li>
+      <li id='h4'><img src="" alt=""></li>
+      <li id='h2'><img src="" alt=""></li>      
+      <li id='h1'><img src="" alt=""></li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    function Gotop(ct){
+      this.ct = ct
+      this.target
+      this.createNode()  
+      this.bindEvent()   
+      this.hiddenClick()
+    }
+
+
+    Gotop.prototype.createNode = function(){
+      var action = 'click'
+      this.target = $('<div id="click">回到顶部</div>')
+      this.ct.append(this.target)
+      
+    }
+
+    Gotop.prototype.bindEvent = function(){
+      console.log(1)
+      $('#click').on('click',function(){
+        console.log(2)
+        $(window).scrollTop(0)
+      })  
+    }
+
+    Gotop.prototype.hiddenClick = function(){
+      $(window).on("scroll",function(){
+        if ($(window).scrollTop() === 0){
+          $('#click').hide()
+        }else{
+          $('#click').show() 
+        }
+      })
+    }
+
+    var goTop = new Gotop($('body'))
+
+
+
+
+
+
+
+
+
+
+
+    var waterfull = (function(){
+      
+      function doit(){
+        waterFull()
+        
+        $(window).resize(function(){
+        
+          waterFull()
+        })
+        
+      }
+      
+      function waterFull(){
+        var itemHeight = $('.contain>li').width()
+        var itemCount =  parseInt($('.contain').width()/itemHeight)
+
+        var Arr = []
+
+        for (var i=0; i<itemCount; i++){
+          Arr[i] = 0
+        }
+      
+        $('.contain>li').each(function(){
+          var minHeight = Math.min.apply(null,Arr)
+          var minIndex = Arr.indexOf(minHeight)
+          $(this).css({
+            top: Arr[minIndex],
+            left: $(this).outerWidth(true) * minIndex
+          })
+         $(this).find('img').attr('src','http://lorempixel.com/400/'+$(this).height()+'/')
+          Arr[minIndex] += $(this).outerHeight(true)
+        })
+      }  
+      return {
+        init: doit
+      } 
+    })()
+
+    waterfull.init()    
+  </script>
+</body>
+</html>
