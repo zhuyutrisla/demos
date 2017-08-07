@@ -6,6 +6,7 @@
   <title>Gotop组件</title>
   <style type="text/css">
     #click{
+      display: none;
       width: 100px;
       height: 40px;
       background: #333;
@@ -110,14 +111,13 @@
     function Gotop(ct){
       this.ct = ct
       this.target
-      this.createNode()  
-      this.bindEvent()   
+      this.createNode()   
       this.hiddenClick()
+      this.bindEvent()  
     }
 
 
     Gotop.prototype.createNode = function(){
-      var action = 'click'
       this.target = $('<div id="click">回到顶部</div>')
       this.ct.append(this.target)
       
@@ -125,18 +125,20 @@
 
     Gotop.prototype.bindEvent = function(){
       console.log(1)
-      $('#click').on('click',function(){
-        console.log(2)
+      var _this = this
+      $(this.target).on('click',function(){
         $(window).scrollTop(0)
+        _this.target.fadeOut()
       })  
     }
 
     Gotop.prototype.hiddenClick = function(){
+      var _this = this
       $(window).on("scroll",function(){
-        if ($(window).scrollTop() === 0){
-          $('#click').hide()
+        if ($(window).scrollTop() >= 20){
+            _this.target.fadeIn()
         }else{
-          $('#click').show() 
+            _this.target.fadeOut()
         }
       })
     }
