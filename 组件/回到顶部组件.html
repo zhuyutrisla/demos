@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
   <meta charset="utf-8">
   <title>Gotop组件</title>
   <style type="text/css">
@@ -19,15 +19,10 @@
       line-height: 40px;
       color: white;
     }
-
-
-
-
     *{
       padding: 0;
       margin: 0;
     }
-
     li{
       list-style: none;
       display: inline-block;
@@ -36,35 +31,32 @@
       margin: 10px;
       transition: all 1s;
     }
-
     .contain{
       position: relative;
-
+      max-width: 1000px;
+      margin: 10px auto;
+      left: -5%;
     }
-
     #h1{
       height: 150px;
       background: red;
     }
-
     #h2{
       height: 200px;
       background: blue;
     }
-
     #h3{
       height: 300px;
       background: yellow;
     }
-
     #h4{
       height: 250px;
       background: green;
     }
-
     img{
       width: 100%;
       height: 100%;
+      
     }    
   </style>
 </head>
@@ -115,14 +107,11 @@
       this.hiddenClick()
       this.bindEvent()  
     }
-
-
     Gotop.prototype.createNode = function(){
       this.target = $('<div id="click">回到顶部</div>')
       this.ct.append(this.target)
       
     }
-
     Gotop.prototype.bindEvent = function(){
       console.log(1)
       var _this = this
@@ -131,7 +120,6 @@
         _this.target.fadeOut()
       })  
     }
-
     Gotop.prototype.hiddenClick = function(){
       var _this = this
       $(window).on("scroll",function(){
@@ -142,19 +130,7 @@
         }
       })
     }
-
     var goTop = new Gotop($('body'))
-
-
-
-
-
-
-
-
-
-
-
     var waterfull = (function(){
       
       function doit(){
@@ -170,9 +146,7 @@
       function waterFull(){
         var itemHeight = $('.contain>li').width()
         var itemCount =  parseInt($('.contain').width()/itemHeight)
-
         var Arr = []
-
         for (var i=0; i<itemCount; i++){
           Arr[i] = 0
         }
@@ -192,7 +166,6 @@
         init: doit
       } 
     })()
-
     waterfull.init()    
   </script>
 </body>
